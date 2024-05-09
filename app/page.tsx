@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { ModeToggle } from "@/components/mode-toggle";
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
           <p>An advanced online playground for Tailwind CSS, including support for things like:</p>
           <ul className ="space-y-4">
             <li className ="flex items-center">
-              <svg className="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+              <svg className="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="11" />
                 <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
               </svg>
@@ -21,7 +22,7 @@ export default function Home() {
               </p>
             </li>
             <li className ="flex items-center">
-              <svg className ="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+              <svg className ="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="11" />
                 <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
               </svg>
@@ -31,7 +32,7 @@ export default function Home() {
               </p>
             </li>
             <li className ="flex items-center">
-              <svg className ="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" stroke-linecap="round" stroke-linejoin="round">
+              <svg className ="h-6 w-6 flex-none fill-sky-100 stroke-sky-500 stroke-2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="11" />
                 <path d="m8 13 2.165 2.165a1 1 0 0 0 1.521-.126L16 9" fill="none" />
               </svg>
@@ -40,6 +41,7 @@ export default function Home() {
           </ul>
           <p>Perfect for learning how the framework works, prototyping a new idea, or creating a demo to share online.</p>
           <Button className="bg-green-500 hover:bg-blue-400" variant="outline">Hello</Button>
+          <ModeToggle></ModeToggle>
         </div>
 
         <div className ="pt-8 text-base font-semibold leading-7">
