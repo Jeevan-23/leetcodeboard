@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -39,7 +39,9 @@ export default function Home() {
             </li>
           </ul>
           <p>Perfect for learning how the framework works, prototyping a new idea, or creating a demo to share online.</p>
+          <Button className="bg-green-500 hover:bg-blue-400" variant="outline">Hello</Button>
         </div>
+
         <div className ="pt-8 text-base font-semibold leading-7">
           <p className ="text-gray-900">Want to dig deeper into Tailwind?</p>
           <p>
