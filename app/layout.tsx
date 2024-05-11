@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider"
-
+import { SiteFooter } from "@/components/site-footer"
+import { SiteHeader } from "@/components/site-header"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,7 +26,9 @@ export default function RootLayout({
         enableSystem
         disableTransitionOnChange
         >
-            {children}
+             <SiteHeader />
+            <main className="flex-1">{children}</main>
+            <SiteFooter />
         </ThemeProvider>
           
       </body>
