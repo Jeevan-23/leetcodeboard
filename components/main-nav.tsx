@@ -8,7 +8,6 @@ import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
 
-
 export function MainNav() {
   const pathname = usePathname()
 

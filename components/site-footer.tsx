@@ -14,7 +14,6 @@ export function SiteFooter() {
           >
             unstb4l
           </a>
-          
         </p>
       </div>
     </footer>
