@@ -1,5 +1,5 @@
-import { Metadata } from "next"
-import * as React from "react"
+
+import React from "react"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -20,7 +20,7 @@ import {
 } from "@/components/ui/select"
 
 
-export function CardWithForm() {
+export default function CardWithForm() {
   return (
     <Card className="w-[350px]">
       <CardHeader>
@@ -43,8 +43,6 @@ export function CardWithForm() {
                 <SelectContent position="popper">
                   <SelectItem value="next">Next.js</SelectItem>
                   <SelectItem value="sveltekit">SvelteKit</SelectItem>
-                  <SelectItem value="astro">Astro</SelectItem>
-                  <SelectItem value="nuxt">Nuxt.js</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -59,8 +57,4 @@ export function CardWithForm() {
   )
 }
 
-  export const metadata: Metadata = {
-    title: "Problems redirect",
-    description:
-      "Input any problem id and get the result",
-  }
+
