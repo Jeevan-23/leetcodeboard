@@ -1,4 +1,4 @@
-import CardWithForm from "@/components/card-form"
+import CardWithForm from "@/components/custom/lc-form"
 
 export default function problems() {
     return (
