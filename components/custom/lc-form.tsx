@@ -30,7 +30,7 @@ export default function CardWithForm() {
         </form>
       </CardContent>
       <CardFooter className="flex justify-between">
-        <Button>Submit</Button>
+        <Button type="submit">Submit</Button>
       </CardFooter>
     </Card>
   )
