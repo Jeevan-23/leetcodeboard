@@ -28,9 +28,7 @@ export default function ProfileForm() {
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      problem_id: 0,
-    },
+    
   })
   const router = useRouter()
 
