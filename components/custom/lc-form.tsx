@@ -1,39 +1,63 @@
-
-import React from "react"
+"use client"
+ 
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from "react-hook-form"
+import { z } from "zod"
 import { Button } from "@/components/ui/button"
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+ 
+ 
+const formSchema = z.object({
+  problem_id: z.number().min(1, {
+    message: "Enter a valid problem id",
+  }),
+})
 
-export default function CardWithForm() {
+export default function ProfileForm() {
+
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      problem_id: 1,
+    },
+  })
+
   return (
-    <Card className="w-[350px]">
-      <CardHeader>
-        <CardTitle>Problems</CardTitle>
-        <CardDescription></CardDescription>
-      </CardHeader>
-      <CardContent>
-        <form>
-          <div className="grid w-full items-center gap-4">
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="name">Problem id</Label>
-                <Input id="name" placeholder="Enter your Problem id" />
-            </div>
-          </div>
-        </form>
-      </CardContent>
-      <CardFooter className="flex justify-between">
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <FormField
+          control={form.control}
+          name="problem_id"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Username</FormLabel>
+              <FormControl>
+                <Input placeholder="shadcn" {...field} />
+              </FormControl>
+              <FormDescription>
+                This is your public display name.
+              </FormDescription>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
         <Button type="submit">Submit</Button>
-      </CardFooter>
-    </Card>
+      </form>
+    </Form>
   )
-}
 
+  
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    console.log(values)
+  }
+}
 
