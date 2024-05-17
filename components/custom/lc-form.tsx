@@ -17,17 +17,17 @@ import { Input } from "@/components/ui/input"
  
  
 const formSchema = z.object({
-  problem_id: z.number().min(1, {
-    message: "Enter a valid problem id",
-  }),
-})
+  problem_id: z.number()
+    .min(1, { message: "Enter a valid problem id (minimum 1)" })
+    .max(1000000, { message: "Enter a valid problem id (maximum 1000000)" }),
+});
 
 export default function ProfileForm() {
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      problem_id: 1,
+      problem_id: 0,
     },
   })
 
@@ -39,12 +39,12 @@ export default function ProfileForm() {
           name="problem_id"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Username</FormLabel>
+              <FormLabel>Problem id</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="Enter you problem id" {...field} />
               </FormControl>
               <FormDescription>
-                This is your public display name.
+                
               </FormDescription>
               <FormMessage />
             </FormItem>
