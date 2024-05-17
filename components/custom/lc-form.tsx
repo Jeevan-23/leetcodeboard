@@ -4,6 +4,8 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { Button } from "@/components/ui/button"
+import { useRouter } from 'next/navigation'
+
 import {
   Form,
   FormControl,
@@ -30,6 +32,7 @@ export default function ProfileForm() {
       problem_id: 0,
     },
   })
+  const router = useRouter()
 
   return (
     <Form {...form}>
@@ -58,6 +61,8 @@ export default function ProfileForm() {
   
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(typeof(values.problem_id))
+    const id = values.problem_id;
+    router.push(`/problems/${id}`);
   }
 }
 
