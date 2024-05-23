@@ -4,8 +4,8 @@ export const siteConfig = {
   ogImage: "https://ui.shadcn.com/og.jpg",
   description: "Unlock the beast coding experience.",
   links: {
-    twitter: "https://twitter.com/adaptatron",
-    github: "https://github.com/adaptatron",
+    twitter: "https://twitter.com/unstb4l",
+    github: "https://github.com/Jeevan-23",
   },
 }
 
