@@ -19,10 +19,9 @@ import { Input } from "@/components/ui/input"
  
  
 const formSchema = z.object({
-  problem_id:  z.preprocess((a) => parseInt(z.string().parse(a),10),
-    z.number().min(1, { message: "Enter a valid problem id (minimum 1)" })
-    .max(1000000, { message: "Enter a valid problem id (maximum 1000000)" })),
+  problem_id: z.coerce.number().gte(1, "Enter a valid problem id")
 });
+
 
 export default function ProfileForm() {
 
@@ -58,9 +57,7 @@ export default function ProfileForm() {
 
   
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(typeof(values.problem_id))
-    const id = values.problem_id;
-    router.push(`/problems/${id}`);
+    router.push(`/problems/${values.problem_id}`);
   }
 }
 
