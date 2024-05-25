@@ -4,7 +4,7 @@ import { Excalidraw } from "@excalidraw/excalidraw";
 export default function App() {
   return (
     <>
-      <div style={{ height: "550px" }}>
+      <div className="flex h-screen ">
         <Excalidraw />
       </div>
     </>
