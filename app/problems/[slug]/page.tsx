@@ -1,5 +1,5 @@
 "use client"
-import { Excalidraw } from "@excalidraw/excalidraw";
+import { Excalidraw } from "@excalidraw/excalidraw"
 
 export default function App() {
   return (
@@ -8,5 +8,5 @@ export default function App() {
         <Excalidraw />
       </div>
     </>
-  );
+  )
 }

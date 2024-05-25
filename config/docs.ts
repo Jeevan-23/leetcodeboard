@@ -14,5 +14,5 @@ export const docsConfig: DocsConfig = {
       title: "Problems",
       href: "/problems",
     }
-  ]
+  ],
 }

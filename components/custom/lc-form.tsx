@@ -1,10 +1,10 @@
 "use client"
- 
-import { zodResolver } from '@hookform/resolvers/zod'
+
+import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { Button } from "@/components/ui/button"
-import { useRouter } from 'next/navigation'
+import { useRouter } from "next/navigation"
 
 import {
   Form,
@@ -16,18 +16,14 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
- 
- 
-const formSchema = z.object({
-  problem_id: z.coerce.number().gte(1, "Enter a valid problem id")
-});
 
+const formSchema = z.object({
+  problem_id: z.coerce.number().gte(1, "Enter a valid problem id"),
+})
 
 export default function ProfileForm() {
-
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    
   })
   const router = useRouter()
 
@@ -43,9 +39,7 @@ export default function ProfileForm() {
               <FormControl>
                 <Input placeholder="Enter you problem id" {...field} />
               </FormControl>
-              <FormDescription>
-                
-              </FormDescription>
+              <FormDescription></FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -55,9 +49,7 @@ export default function ProfileForm() {
     </Form>
   )
 
-  
   function onSubmit(values: z.infer<typeof formSchema>) {
-    router.push(`/problems/${values.problem_id}`);
+    router.push(`/problems/${values.problem_id}`)
   }
 }
-
