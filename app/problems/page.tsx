@@ -1,5 +1,6 @@
 import ProfileForm from "@/components/custom/lc-form"
 
+
 export default function problems() {
   return (
     <div className="relative flex min-h-screen flex-col justify-center overflow-hidden py-6 sm:py-12 ">
