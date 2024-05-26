@@ -6,7 +6,9 @@ import { useParams } from "next/navigation"
 export default function App() {
   const params = useParams()
   const titleParam = params.slug
-  const title = Array.isArray(titleParam) ? titleParam.join(' ') : titleParam || "WhiteBoard"
+  const title = Array.isArray(titleParam)
+    ? titleParam.join(" ")
+    : titleParam || "WhiteBoard"
   const prefixedTitle = `Problem: ${title}`
 
   useEffect(() => {
