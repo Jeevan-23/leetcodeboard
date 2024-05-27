@@ -1,7 +1,4 @@
-import Link from "next/link"
 
-import { siteConfig } from "@/config/site"
-import { cn } from "@/lib/utils"
 import { MainNav } from "@/components/main-nav"
 import { MobileNav } from "./mobile-nav"
 
