@@ -9,7 +9,7 @@ export default function App() {
   const title = Array.isArray(titleParam)
     ? titleParam.join(" ")
     : titleParam || "WhiteBoard"
-  const prefixedTitle = `Problem: ${title}`
+  const prefixedTitle = `Problem : ${title}`
 
   useEffect(() => {
     document.title = prefixedTitle
@@ -17,7 +17,7 @@ export default function App() {
 
   return (
     <>
-      <div className="flex h-screen z-50">
+      <div className="flex h-[calc(100vh-3.5rem)] z-50">
         <Excalidraw />
       </div>
     </>
