@@ -1,7 +1,7 @@
 "use client"
 import { useEffect } from "react"
-import { Excalidraw } from "@excalidraw/excalidraw"
 import { useParams } from "next/navigation"
+import ExcalidrawWrapper from "@/components/custom/excalidraw-wrapper"
 
 export default function App() {
   const params = useParams()
@@ -17,9 +17,7 @@ export default function App() {
 
   return (
     <>
-      <div className="flex h-[calc(100vh-3.5rem)] z-50">
-        <Excalidraw />
-      </div>
+        <ExcalidrawWrapper />
     </>
   )
 }
