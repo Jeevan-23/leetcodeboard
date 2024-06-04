@@ -1,5 +1,5 @@
 "use client"
-import {Excalidraw, WelcomeScreen} from "@excalidraw/excalidraw"
+import {Excalidraw, WelcomeScreen, MainMenu} from "@excalidraw/excalidraw"
 
 const ExcalidrawWrapper: React.FC = () => { 
     return (
@@ -11,6 +11,15 @@ const ExcalidrawWrapper: React.FC = () => {
           <WelcomeScreen.Hints.MenuHint />
           <WelcomeScreen.Hints.HelpHint />
         </WelcomeScreen>
+        <MainMenu>
+          <MainMenu.DefaultItems.LoadScene />
+          <MainMenu.DefaultItems.Export />
+          <MainMenu.DefaultItems.SaveAsImage />
+          <MainMenu.DefaultItems.Help />
+          <MainMenu.DefaultItems.ClearCanvas />
+          <MainMenu.DefaultItems.ToggleTheme />
+          <MainMenu.DefaultItems.ChangeCanvasBackground />
+        </MainMenu>
       </Excalidraw>
     </div>
       </>
