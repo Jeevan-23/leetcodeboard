@@ -1,5 +1,5 @@
 "use client"
-import {Excalidraw, WelcomeScreen, MainMenu, serializeAsJSON} from "@excalidraw/excalidraw"
+import {Excalidraw, WelcomeScreen, MainMenu, serializeAsJSON, getSceneVersion} from "@excalidraw/excalidraw"
 import { ExcalidrawElement } from "@excalidraw/excalidraw/types/element/types";
 import { AppState, BinaryFiles } from "@excalidraw/excalidraw/types/types";
 import { useParams } from "next/navigation";
@@ -9,14 +9,18 @@ import { useParams } from "next/navigation";
 const ExcalidrawWrapper: React.FC = () => { 
   const params = useParams()
   const titleParam = params.slug
-
+  let lastSceneVersion = -1;
   const onChange = (
     elements: readonly ExcalidrawElement[],
     appstate: AppState,
     files: BinaryFiles
   ) => {
-    const content = serializeAsJSON(elements, appstate, files, "local")
-    localStorage.setItem("excalidraw"+titleParam, content);
+    const currentversion = getSceneVersion(elements);
+    if(currentversion > lastSceneVersion) {
+      const content = serializeAsJSON(elements, appstate, files, "local")
+      localStorage.setItem("excalidraw"+titleParam, content);
+      lastSceneVersion = currentversion;
+    }
   }
 
   const retrieveInitialData = () => {
