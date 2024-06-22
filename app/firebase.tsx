@@ -2,17 +2,19 @@
 import { initializeApp } from "firebase/app"
 import { getFirestore, getDoc, doc } from "firebase/firestore/lite"
 
+
 // TODO : Use environment variables. Do not add API keys to version control.
 // For local development, copy paste this config from your firestore project settings.
 const firebaseConfig = {
-    apiKey: "AIzaSyBb_mv8ukCKfSHcO1ksinNrUJ6Yw43psh0",
-    authDomain: "lc-board.firebaseapp.com",
-    projectId: "lc-board",
-    storageBucket: "lc-board.appspot.com",
-    messagingSenderId: "269382160604",
-    appId: "1:269382160604:web:8de78eeb2293f345c12419",
-    measurementId: "G-KV3ZJBQEYJ"
-  };
+  apiKey: "AIzaSyBqHnK_3b8wC08t0xvfHqxw0tyLR_8t494",
+  authDomain: "lcboard-85d25.firebaseapp.com",
+  projectId: "lcboard-85d25",
+  storageBucket: "lcboard-85d25.appspot.com",
+  messagingSenderId: "344003910610",
+  appId: "1:344003910610:web:f04577fa15d757ee7d460b",
+  measurementId: "G-GXB2YZXFZ5"
+};
+
   
 
 const app = initializeApp(firebaseConfig)
