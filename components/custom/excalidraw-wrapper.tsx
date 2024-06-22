@@ -37,10 +37,10 @@ const ExcalidrawWrapper: React.FC = () => {
       const content = serializeAsJSON(elements, appstate, files, "local");
       localStorage.setItem("excalidraw" + titleParam, content);
 
-      
-      await setDoc(doc(db, "excalidraw", titleParam), {
-        content
-      });
+      // updating in firebase
+      // await setDoc(doc(db, "excalidraw", titleParam), {
+      //   content
+      // });
       lastSceneVersion = currentversion;
     }
   };
@@ -51,15 +51,18 @@ const ExcalidrawWrapper: React.FC = () => {
     // Retrieve data from Firestore
     const docRef = doc(db, "excalidraw", titleParam);
     const docSnap = await getDoc(docRef);
-    if (docSnap.exists()) {
-      return JSON.parse(docSnap.data().content);
-    } else {
+    // for retriving from the firestore
+    // if (docSnap.exists()) {
+    //   return JSON.parse(docSnap.data().content);
+    // } 
+    // else 
+    // {
       // Fallback to localStorage if Firestore data does not exist
       const content = localStorage.getItem("excalidraw" + titleParam);
       if (content != null) {
         return JSON.parse(content);
       }
-    }
+    // }
     return null;
   };
 
