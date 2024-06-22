@@ -14,7 +14,7 @@ export const docsConfig: DocsConfig = {
   ],
   sidebarNav: [
     {
-      title: "Contact me",
+      title: "Contact",
       items: [
         {
           title: "Twitter / X",
