@@ -4,21 +4,21 @@ import { ExcalidrawElement } from "@excalidraw/excalidraw/types/element/types";
 import { AppState, BinaryFiles } from "@excalidraw/excalidraw/types/types";
 import { useParams } from "next/navigation";
 
-import { initializeApp } from "firebase/app"
-import { getFirestore, getDoc, doc , setDoc} from "firebase/firestore/lite"
+// import { initializeApp } from "firebase/app"
+// import { getFirestore, getDoc, doc , setDoc} from "firebase/firestore/lite"
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBqHnK_3b8wC08t0xvfHqxw0tyLR_8t494",
-  authDomain: "lcboard-85d25.firebaseapp.com",
-  projectId: "lcboard-85d25",
-  storageBucket: "lcboard-85d25.appspot.com",
-  messagingSenderId: "344003910610",
-  appId: "1:344003910610:web:f04577fa15d757ee7d460b",
-  measurementId: "G-GXB2YZXFZ5"
-};
+// const firebaseConfig = {
+//   apiKey: "AIzaSyBqHnK_3b8wC08t0xvfHqxw0tyLR_8t494",
+//   authDomain: "lcboard-85d25.firebaseapp.com",
+//   projectId: "lcboard-85d25",
+//   storageBucket: "lcboard-85d25.appspot.com",
+//   messagingSenderId: "344003910610",
+//   appId: "1:344003910610:web:f04577fa15d757ee7d460b",
+//   measurementId: "G-GXB2YZXFZ5"
+// };
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+// const app = initializeApp(firebaseConfig);
+// const db = getFirestore(app);
 
 const ExcalidrawWrapper: React.FC = () => {
   const params = useParams<{ slug?: string | string[] }>();
@@ -49,8 +49,8 @@ const ExcalidrawWrapper: React.FC = () => {
     if (!titleParam) return null;
 
     // Retrieve data from Firestore
-    const docRef = doc(db, "excalidraw", titleParam);
-    const docSnap = await getDoc(docRef);
+    // const docRef = doc(db, "excalidraw", titleParam);
+    // const docSnap = await getDoc(docRef);
     // for retriving from the firestore
     // if (docSnap.exists()) {
     //   return JSON.parse(docSnap.data().content);
