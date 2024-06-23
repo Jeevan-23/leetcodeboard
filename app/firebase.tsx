@@ -1,24 +1,23 @@
 // TODO : Use a module bundler for size reduction
 import { initializeApp } from "firebase/app"
 import { getFirestore, getDoc, doc } from "firebase/firestore/lite"
+import 'firebase/auth';
 
-
-// TODO : Use environment variables. Do not add API keys to version control.
-// For local development, copy paste this config from your firestore project settings.
 const firebaseConfig = {
-  apiKey: "AIzaSyBqHnK_3b8wC08t0xvfHqxw0tyLR_8t494",
-  authDomain: "lcboard-85d25.firebaseapp.com",
-  projectId: "lcboard-85d25",
-  storageBucket: "lcboard-85d25.appspot.com",
-  messagingSenderId: "344003910610",
-  appId: "1:344003910610:web:f04577fa15d757ee7d460b",
-  measurementId: "G-GXB2YZXFZ5"
+  apiKey: process.env.REACT_APP_API_KEY,
+ authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+ projectId: process.env.REACT_APP_PROJECT_ID,
+ storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+ messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+ appId: process.env.REACT_APP_APP_ID,
+ measurementId: process.env.REACT_APP_MEASUREMENT_ID
 };
 
   
 
 const app = initializeApp(firebaseConfig)
 const db = getFirestore(app)
+
 
 async function getDocumentData(collectionName: string, documentId: string) {
   try {
