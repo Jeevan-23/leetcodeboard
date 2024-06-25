@@ -22,7 +22,8 @@ import { useParams } from "next/navigation";
 
 const ExcalidrawWrapper: React.FC = () => {
   const params = useParams<{ slug?: string | string[] }>();
-  const titleParam = Array.isArray(params.slug) ? params.slug[0] : params.slug;
+  const titleParam = Array.isArray(params?.slug) ? params?.slug[0] : params?.slug ?? "";
+  
 
   let lastSceneVersion = -1;
 
