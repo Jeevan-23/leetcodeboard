@@ -25,13 +25,11 @@ export default function Home() {
 
       {/* Get Started Button */}
       <div className="flex justify-center">
-        <Button className="px-8 py-4 bg-gray-600 text-white text-xl font-bold rounded-lg shadow-lg hover:bg-blue-700 transition duration-300">
+        <Button>
           <Link
             href="/problems"
             className={cn(
               pathname?.startsWith("/problems")
-                ? "text-foreground"
-                : "text-foreground/60"
             )}
           >
             Get Started
