@@ -1,11 +1,12 @@
 "use client"
-import { useEffect } from "react"
+import { Suspense, useEffect } from "react"
 import { useParams } from "next/navigation"
 import ExcalidrawWrapper from "@/components/custom/excalidraw-wrapper"
+import Loading from "@/app/loading"
 
 export default function App() {
   const params = useParams()
-  const titleParam = params.slug
+  const titleParam = params?.slug
   const title = Array.isArray(titleParam)
     ? titleParam.join(" ")
     : titleParam || "WhiteBoard"
@@ -17,7 +18,9 @@ export default function App() {
 
   return (
     <>
-      <ExcalidrawWrapper />
+      <Suspense fallback = {<Loading />} >
+        <ExcalidrawWrapper />
+      </Suspense>
     </>
   )
 }
