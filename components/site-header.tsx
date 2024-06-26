@@ -1,4 +1,3 @@
-
 import { MainNav } from "@/components/main-nav"
 import { MobileNav } from "./mobile-nav"
 

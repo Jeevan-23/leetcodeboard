@@ -31,7 +31,6 @@ export const docsConfig: DocsConfig = {
           href: "https://discord.com/users/1014794382970474506",
           items: [],
         },
-        
       ],
     },
   ],
