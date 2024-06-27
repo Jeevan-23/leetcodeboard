@@ -1,4 +1,5 @@
-import LoadingSkeleton from "@/components/shimmer"
+import { Skeleton } from "@/components/ui/skeleton";
+
 export default function Loading() {
-  return <LoadingSkeleton />
+  return <Skeleton />
 }
