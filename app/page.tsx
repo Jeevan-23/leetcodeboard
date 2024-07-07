@@ -15,8 +15,7 @@ export default function Home() {
             <h1 className="text-5xl font-bold mb-6">LeetCode Board</h1>
             <p className="text-lg mb-6">
               A note-taking website where you can store notes online for free,
-              specifically for coding problems in Leetcode, You can save
-              handwritten notes.
+              specifically for problems in Leetcode.
             </p>
           </div>
           <div className="flex justify-center md:w-1/2 order-2 md:order-1">
