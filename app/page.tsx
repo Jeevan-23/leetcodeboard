@@ -8,7 +8,7 @@ export default function Home() {
       <div className="max-w-md w-full bg-white rounded-xl shadow-lg p-8">
         <h1 className="text-3xl font-extrabold text-center text-gray-800 mb-6">Welcome to Leetcode Board</h1>
         <p className="text-center text-gray-600 mb-8">
-          A one stop solution to saving your notes/ideas for problems.
+          A one stop solution to saving your notes/ideas for problems
         </p>
         <div className="flex flex-col items-center space-y-6">
           <div className="w-full">
