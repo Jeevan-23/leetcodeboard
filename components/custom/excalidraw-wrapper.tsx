@@ -1,4 +1,6 @@
 "use client"
+import {getKindeServerSession} from "@kinde-oss/kinde-auth-nextjs/server";
+
 import {
   Excalidraw,
   WelcomeScreen,
@@ -26,6 +28,14 @@ import { useParams } from "next/navigation"
 // const app = initializeApp(firebaseConfig);
 // const db = getFirestore(app);
 
+
+const {getUser} = getKindeServerSession();
+const user = getUser();
+
+
+
+
+
 const ExcalidrawWrapper: React.FC = () => {
   const params = useParams<{ slug?: string | string[] }>()
   const titleParam = Array.isArray(params?.slug)
@@ -43,7 +53,7 @@ const ExcalidrawWrapper: React.FC = () => {
     if (currentversion > lastSceneVersion) {
       if (!titleParam) return null
       const content = serializeAsJSON(elements, appstate, files, "local")
-      localStorage.setItem("excalidraw" + titleParam, content)
+      localStorage.setItem("excalidraw"  +  titleParam, content)
 
       // updating in firebase
       // await setDoc(doc(db, "excalidraw", titleParam), {
