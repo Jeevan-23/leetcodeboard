@@ -1,26 +1,33 @@
-"use client"
-import { Suspense, useEffect } from "react"
-import { useParams } from "next/navigation"
-import ExcalidrawWrapper from "@/components/custom/excalidraw-wrapper"
-import Loading from "@/app/loading"
+import { Metadata } from 'next';
+import dynamic from 'next/dynamic';
+import Loading from '@/app/loading';
+import { Suspense } from 'react';
 
-export default function App() {
-  const params = useParams()
-  const titleParam = params?.slug
-  const title = Array.isArray(titleParam)
-    ? titleParam.join(" ")
-    : titleParam || "WhiteBoard"
-  const prefixedTitle = `Problem : ${title}`
+type Props = {
+  params: {
+    slug: string;
+  };
+};
 
-  useEffect(() => {
-    document.title = prefixedTitle
-  }, [prefixedTitle])
+export const generateMetadata = ({ params }: Props): Metadata => {
+  return {
+    title: `${params?.slug} | Whiteboard`,
+  };
+};
 
+const DynamicExcalidrawWrapper = dynamic(() => import('@/components/custom/excalidraw-wrapper'), {
+  ssr: false, // Disable server-side rendering
+  loading: () => <Loading />,
+});
+
+const ProblemPage = ({ params }: Props) => {
   return (
     <>
-      <Suspense fallback = {<Loading />} >
-        <ExcalidrawWrapper />
+      <Suspense fallback={<Loading />}>
+        <DynamicExcalidrawWrapper />
       </Suspense>
     </>
-  )
-}
+  );
+};
+
+export default ProblemPage;
