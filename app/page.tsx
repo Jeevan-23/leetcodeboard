@@ -67,17 +67,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      {/* Special Thanks Section */}
-      <div className="text-center text-lg text-gray-700 dark:text-gray-300">
-        Special thanks to{" "}
-        <a
-          href="https://twitter.com/adaptatron"
-          className="text-blue-600 dark:text-blue-400 hover:underline"
-        >
-          Adaptatron
-        </a>
-      </div>
+      
     </div>
   )
 }
