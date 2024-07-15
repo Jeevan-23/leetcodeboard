@@ -65,7 +65,7 @@ const ExcalidrawWrapper: React.FC = () => {
 
         if (docSnap.exists()) {
           const data = docSnap.data().content;
-          console.log("Data retrieved from Firestore for key:", combinedKey, data);
+          // console.log("Data retrieved from Firestore for key:", combinedKey, data);
           setInitialData(JSON.parse(data));
         } else {
           throw new Error("Document does not exist in Firestore");
@@ -101,7 +101,7 @@ const ExcalidrawWrapper: React.FC = () => {
       if (!titleParam || !userId) return;
 
       const combinedKey = userId + titleParam;
-      console.log("Saving data for combined key:", combinedKey);
+      // console.log("Saving data for combined key:", combinedKey);
 
       const content = serializeAsJSON(elements, appState, files, "local");
       if (content !== 'null') {  // Check for valid content
