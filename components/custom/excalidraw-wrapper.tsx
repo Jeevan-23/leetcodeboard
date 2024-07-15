@@ -57,7 +57,6 @@ const ExcalidrawWrapper: React.FC = () => {
       }
 
       const combinedKey = userId + titleParam;
-      console.log("Retrieving data for combined key:", combinedKey);
 
       try {
         // Retrieve data from Firestore
@@ -72,12 +71,12 @@ const ExcalidrawWrapper: React.FC = () => {
           throw new Error("Document does not exist in Firestore");
         }
       } catch (error) {
-        console.error("Error retrieving data from Firestore, checking local storage:", error);
+        // console.error("Error retrieving data from Firestore, checking local storage:", error);
 
         // Check local storage as a fallback
         const content = localStorage.getItem("excalidraw" + combinedKey);
         if (content != null) {
-          console.log("Data retrieved from localStorage for key:", combinedKey, content);
+          // console.log("Data retrieved from localStorage for key:", combinedKey, content);
           setInitialData(JSON.parse(content));
         }
       }
