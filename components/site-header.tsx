@@ -25,11 +25,11 @@ export function SiteHeader() {
           <MobileNav />
         </div>
         <div className="flex items-center">
-          {isLoggedIn ? (
+          {/* {isLoggedIn ? (
             <Button className="mr-2" onClick={handleLogout}>Logout</Button>
           ) : (
             <Button className="mr-2" onClick={handleLogin}>Login</Button>
-          )}
+          )} */}
           <nav className="flex items-center">
             <ModeToggle />
           </nav>
